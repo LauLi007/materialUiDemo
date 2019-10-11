@@ -2,7 +2,8 @@ import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
 
 import { makeStyles } from '@material-ui/styles';
 
@@ -11,7 +12,11 @@ const useStyles = makeStyles({
     display: "inline-block", 
     width: 150,
     textAlign: "right", 
-    color: "#ffffff"
+  }, 
+  color: {
+    color: "#ffffff", 
+    textDecoration: "none"
+
   }
   
 });
@@ -20,15 +25,18 @@ const useStyles = makeStyles({
 const listItems = [
   {
     text: "Home",
-    id: 1
+    id: 1,
+    path: "/"
   },
   {
     text: "About us",
-    id: 2
+    id: 2, 
+    path: "/about"
 },
 {
     text: "Contact",
-    id: 3
+    id: 3, 
+    path: "/contact"
 }
 
 ]
@@ -38,11 +46,12 @@ const MainNavigation = () => {
 
     return (
       <div>
+        
           <List component="nav">
               {listItems.map(item => (
               <ListItem className={classes.listitem} key={item.id}>
                 <ListItemText>
-                    <Typography>{item.text}</Typography>
+                    <Link className={classes.color} to={item.path}>{item.text}</Link>
                 </ListItemText>
               </ListItem>
               ))}
