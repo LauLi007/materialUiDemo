@@ -1,3 +1,12 @@
+Exercise using React and MaterialUi framework (+ routing) 
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
